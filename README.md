@@ -5,7 +5,7 @@ This allows users to create constructive solid geometry from within Blender usin
 ![](images/SD5_Demo.png)
 
 # How to use
-Download the repository as a zip and install the addon in Blender.
+Download the zip in the releases tab [here](https://github.com/Snowdaw/SD5/releases/tag/v1.0) and install the addon in Blender.
 
 Open Blender and go to the scripting tab and create a new script with a name starting with "SD5_". This is to allow the handler to automatically execute the script in the post depsgraph handler.
 
