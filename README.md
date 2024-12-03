@@ -2,6 +2,8 @@
 SD5 is a Blender addon that adds the [libfive](https://libfive.com/) library to Blender.
 This allows users to create constructive solid geometry from within Blender using Python scripts.
 
+![](images/SD5_Demo.png)
+
 # How to use
 Download the repository as a zip and install the addon in Blender.
 
@@ -11,8 +13,8 @@ The quick way is to now put the following in the script:
 ```
 import SD5.utils as sd5
 
-s = sd5.sphere(1)
-sd5.name = "SD5_Demo2"
+s = sd5.sphere(2)
+sd5.name = "SD5_Demo"
 sd5.mesh = s.get_mesh()
 ```
 Then click in the viewport to update the depsgraph and the handler wil run the script.
@@ -37,9 +39,9 @@ s = sd5.blend(s, b, 0.5)
 # Set the name of the output object and get the mesh from within the bounds empty
 # Note that these two variables need to be set for the script to work
 sd5.name = "SD5_Demo"
-sd5.mesh = mesh_from_bounds(s, 10, "Bounds")
+sd5.mesh = sd5.mesh_from_bounds(s, 10, "Bounds")
 ```
-If you move the empty the corresponding shape will update it's position, rotation and scale.
+If you move the empty the corresponding shape will update it's position, rotation and scale. For a better viewing experience set the shading on the object to auto smooth.
 
 To see all available functions you can import the library like in the script in the Python console tab and use autocomplete to get a list of functions.
 
