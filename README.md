@@ -5,13 +5,13 @@ This allows users to create constructive solid geometry from within Blender usin
 ![](images/SD5_Demo.png)
 
 # How to use
-Download the zip in the releases tab [here](https://github.com/Snowdaw/SD5/releases/tag/v1.0) and install the addon in Blender.
+Download the zip in the releases tab [here](https://github.com/Snowdaw/SD5/releases/) and install the addon in Blender.
 
 Open Blender and go to the scripting tab and create a new script with a name starting with "SD5_". This is to allow the handler to automatically execute the script in the post depsgraph handler.
 
 The quick way is to now put the following in the script:
 ```
-import SD5.utils as sd5
+import sd5
 
 s = sd5.sphere(2)
 sd5.name = "SD5_Demo"
@@ -23,7 +23,7 @@ The better way would be to first add three empties to the scene.
 I will call them "C_Sphere", "C_Box" and "Bounds".
 Then put the following in the script:
 ```
-import SD5.utils as sd5
+import sd5
 
 # Add a new sphere and box
 s = sd5.sphere(1)

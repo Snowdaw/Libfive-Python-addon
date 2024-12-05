@@ -11,9 +11,7 @@ from bpy.app.handlers import persistent
 
 @persistent
 def sd5_handler(scene, depsgraph):
-    if bpy.context.mode != "OBJECT":
-        return
-    
+
     sd5_texts = []
     for sd5_text in bpy.data.texts:
         if sd5_text.name.startswith("SD5_"):
@@ -42,7 +40,10 @@ def sd5_handler(scene, depsgraph):
     
             if temp_obj == None:
                 temp_obj = bpy.data.objects.new(sd5_name, temp_mesh)
-                bpy.data.collections["Collection"].objects.link(temp_obj)
+                if not bpy.data.collections.get("SD5"):
+                    sd5_collection = bpy.data.collections.new("SD5")
+                    bpy.data.scenes["Scene"].collection.children.link(sd5_collection)
+                bpy.data.collections["SD5"].objects.link(temp_obj)
     
             temp_mesh.from_pydata(sd5_mesh[0], [], sd5_mesh[1], shade_flat=False)
             temp_obj.data = temp_mesh
